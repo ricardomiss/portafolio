@@ -2,20 +2,19 @@
 import { ref } from 'vue'
 import { motion } from 'motion-v'
 import HeaderNav from '@/components/HeaderNav.vue'
-import SocialLinks from '@/components/SocialLinks.vue'
-import AboutMe from '@/components/AboutMe.vue'
-import Introduction from '@/components/Introduction.vue'
 import SplashScreen from '@/components/SplashScreen.vue'
-import Skills from './components/Skills.vue'
 
-const showLoader = ref(true)
+function isMobileDevice() {
+  return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+}
+const showLoader = ref(!isMobileDevice())
 </script>
 
 <template>
     <SplashScreen v-if="showLoader" @finish="showLoader = false" />
 
     <div v-else class="flex justify-center items-center h-screen w-screen p-2">
-      <div class="h-full w-8/12 grid grid-cols-9 grid-rows-11 gap-2 gridboxes">
+      <div class="h-full lg:w-8/12 grid grid-cols-9 grid-rows-11 gap-2 gridboxes">
         <!-- Header -->
         <motion.div
           class="col-span-9 row-span-1 header"

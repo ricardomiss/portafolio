@@ -15,17 +15,17 @@ function copyEmail(): void {
 </script>
 
 <template>
-  <a class="btnNetworks" href="https://github.com/ricardomiss">
-    <Icon icon="mdi:github" width="32" height="32" />
+  <a href="https://github.com/ricardomiss">
+    <Icon icon="mdi:github"  />
   </a>
-  <a class="btnNetworks" href="https://www.linkedin.com/in/ricardomiss">
-    <Icon icon="mdi:linkedin" width="32" height="32" />
+  <a href="https://www.linkedin.com/in/ricardomiss">
+    <Icon icon="mdi:linkedin" />
   </a>
-  <a class="btnNetworks" href="https://discord.gg/bNNTBfB8">
-    <Icon icon="ic:baseline-discord" width="32" height="32" />
+  <a href="https://discord.gg/bNNTBfB8">
+    <Icon icon="ic:baseline-discord" />
   </a>
-  <a class="btnNetworks" href="mailto:ricardomissdev@yahoo.com" @click="copyEmail">
-    <Icon icon="mdi:email" width="32" height="32" />
+  <a href="mailto:ricardomissdev@yahoo.com" @click="copyEmail">
+    <Icon icon="mdi:email" />
   </a>
 </template>
 

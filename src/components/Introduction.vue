@@ -6,7 +6,7 @@
     A software developer with experience in web and desktop applications. I'm a passionate developer
     who loves creating and improving my projects.
   </p>
-  <p class="text-md font-bold">Feel free to explore my projects and get in touch!</p>
+  <p class="collapse lg:visible text-md font-bold">Feel free to explore my projects and get in touch!</p>
 </template>
 
 <style scoped></style>

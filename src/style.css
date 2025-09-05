@@ -34,6 +34,10 @@ body {
 .social-links a {
   @apply text-black bg-button hover:bg-button-hover font-bold p-2 rounded-full;
 }
+/* Icon */
+.social-links a svg {
+  @apply w-6 h-6 lg:w-8 lg:h-8;
+}
 
 .introduction,
 .skills {
