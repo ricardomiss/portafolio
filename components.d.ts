@@ -16,5 +16,6 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     Skills: typeof import('./src/components/Skills.vue')['default']
     SocialLinks: typeof import('./src/components/SocialLinks.vue')['default']
+    SplashScreen: typeof import('./src/components/SplashScreen.vue')['default']
   }
 }
