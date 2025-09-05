@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+@import 'tailwindcss';
+
+body {
+  @apply font-sans;
+  font-family: 'Comic Relief', cursive;
+}
+
+@theme {
+  --color-background: #2c4f70;
+  --color-grid: #4a5d7a;
+  --color-button: #8b9dc3;
+  --color-button-hover: #3d4a5c;
+  --font-sansation: 'Sansation', sans-serif;
+}
+
+.gridboxes > div {
+  @apply rounded-lg bg-grid text-white;
+}
+
+.gridboxes img {
+  @apply rounded-lg;
+}
+
+.header {
+  @apply flex flex-row justify-around items-center;
+}
+
+.social-links {
+  @apply flex flex-row justify-around items-center;
+}
+
+.social-links a {
+  @apply text-black bg-button hover:bg-button-hover font-bold p-2 rounded-full;
+}
+
+.introduction,
+.skills {
+  @apply flex flex-col justify-around text-center p-2 text-gray-300;
+}
+
+.skills p {
+  @apply text-lg font-bold text-white;
+}
+
+.tags {
+  @apply flex flex-row justify-center items-center flex-wrap gap-2;
+}
+
+.tags > span {
+  @apply bg-button text-black px-2 py-1 rounded-full text-xs;
+}
