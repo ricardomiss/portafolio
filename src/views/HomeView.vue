@@ -35,7 +35,7 @@ function isMobileDevice() {
   </motion.div>
   <!-- Introduction -->
   <motion.div
-    class="col-span-6 row-span-3 lg:col-span-4 lg:row-span-4 introduction"
+    class="col-span-6 row-span-2 lg:col-span-4 lg:row-span-4 introduction"
     :initial="{ x: -100, opacity: 0 }"
     :animate="{ x: 0, opacity: 1 }"
     :transition="{ duration: 1, delay: 0.5 }"
@@ -62,14 +62,14 @@ function isMobileDevice() {
       alt="bocchi"
     />
     <span
-      class="absolute inset-0 flex justify-center items-end text-red-600 text-lg font-bold pointer-events-none"
+      class="absolute inset-0 flex justify-center items-end text-red-600 lg:text-lg font-bold pointer-events-none"
     >
       Don't hire me!
     </span>
   </motion.div>
   <!-- Skills -->
   <motion.div
-    class="col-span-9 row-span-2 lg:col-span-5 lg:row-span-3 skills"
+    class="col-span-9 row-span-3 lg:col-span-5 lg:row-span-3 skills"
     :initial="{ x: 100, opacity: 0 }"
     :animate="{ x: 0, opacity: 1 }"
     :transition="{ duration: 1, delay: 0.5 }"

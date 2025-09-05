@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1 class="text-4xl font-bold text-white text-center mb-4">About Me</h1>
+  <h1 class="text-4xl font-bold text-white text-center">About Me</h1>
   <div class="flex flex-col gap-2 p-2 text-md text-justify text-gray-300">
     <p>
       I'm a dedicated developer with a passion for technology and innovation. I specialize in
