@@ -7,18 +7,26 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
     },
     {
       path: '/projects',
       name: 'projects',
-      component: () => import('@/views/ProjectsView.vue')
+      component: () => import('@/views/ProjectsView.vue'),
     },
     {
       path: '/:catchAll(.*)',
-      redirect: '/'
-    }
+      redirect: '/',
+    },
   ],
+})
+
+router.beforeEach((to, from, next) => {
+  if (from.name == null && to.name !== 'home') {
+    next('/')
+  } else {
+    next()
+  }
 })
 
 export default router
