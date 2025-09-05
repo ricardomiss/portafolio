@@ -9,6 +9,7 @@ import MotionResolver from 'motion-v/resolver'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/portafolio/',
   plugins: [
     vue(),
     vueDevTools(),
