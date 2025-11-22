@@ -5,18 +5,29 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-component: () => import('@/layouts/MainLayout.vue'),
+      component: () => import('@/layouts/MainLayout.vue'),
       children: [
         {
           path: '',
-      name: 'home',
-      component: () => import('@/features/home/views/HomeView.vue'),
+          name: 'home',
+          component: () => import('@/features/home/views/HomeView.vue'),
+        },
+        {
+          path: 'projects',
+          name: 'projects',
+          component: () => import('@/features/home/views/ProjectsView.vue'),
+        },
+      ],
     },
     {
-      path: 'projects',
-      name: 'projects',
-      component: () => import('@/features/home/views/ProjectsView.vue'),
-    },
+      path: '/admin',
+      component: () => import('@/layouts/AdminLayout.vue'),
+      children: [
+        {
+          path: '',
+          name: 'login',
+          component: () => import('@/features/login/views/LoginView.vue'),
+        },
       ],
     },
     {
@@ -27,7 +38,7 @@ component: () => import('@/layouts/MainLayout.vue'),
 })
 
 router.beforeEach((to, from, next) => {
-  if (from.name == null && to.name !== 'home') {
+  if (from.name == null && to.name !== 'home' && to.name !== 'login') {
     next('/')
   } else {
     next()
