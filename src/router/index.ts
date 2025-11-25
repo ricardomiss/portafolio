@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { isAuthenticated } from './guards/authGuard'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,13 +21,25 @@ const router = createRouter({
       ],
     },
     {
-      path: '/admin',
-      component: () => import('@/layouts/AdminLayout.vue'),
+      path: '/login',
+      component: () => import('@/layouts/LoginLayout.vue'),
       children: [
         {
           path: '',
           name: 'login',
           component: () => import('@/features/login/views/LoginView.vue'),
+        },
+      ],
+    },
+    {
+      path: '/admin',
+      component: () => import('@/layouts/AdminLayout.vue'),
+      children: [
+        {
+          path: '',
+          name: 'admin-home',
+          component: () => import('@/features/admin/views/AdminHomeView.vue'),
+          meta: { requiresAuth: true },
         },
       ],
     },
@@ -37,7 +50,15 @@ const router = createRouter({
   ],
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
+  if (to.meta?.requiresAuth as boolean) {
+    if (await isAuthenticated()) {
+      next()
+    } else {
+      next({ name: 'login', query: { redirect: to.fullPath } })
+    }
+  }
+
   if (from.name == null && to.name !== 'home' && to.name !== 'login') {
     next('/')
   } else {
